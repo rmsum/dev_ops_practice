@@ -1,0 +1,14 @@
+# Create and get into the drive
+$ mkdir multiple_file_handling
+$ cd multiple_file_handling
+
+# Create 20 files with .txt extensions 
+$ touch file{1..20}.txt
+$ ls
+
+# rename the first 5 files to .yml extension
+$ for i in {1..5}; do  mv file$i.txt file$i.yml; done
+
+# Print the latest created top 5 files among the total no of files".
+$ ls -lt | head -5
+
