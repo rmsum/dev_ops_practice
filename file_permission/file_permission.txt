@@ -1,0 +1,26 @@
+# Print Work Directory
+$ pwd
+/
+
+# Create the file
+# As logged in as normal user used Sudo
+$ sudo touch /home/demo.txt
+
+# Get current file permission
+$ ls -l /home/demo.txt
+-rw-r--r-- 1 root root 0 Feb  4 16:08 /home/demo.txt
+
+# Current file Permission
+# Owners (rw-) => Read, Write
+# Group (r--) => Read only
+# Others (r--) => Read only
+
+# Change the file permission as following
+# owner (rwx) => Read (4), Write (2), Execute (1) => 4+2+1 => 7
+# Group (rw-) => Read (4), Write (2) => 4+2 => 6
+# Owner (r--) => Read (4) Only => 4
+$ sudo chmod 764 /home/demo.txt
+
+#Verify the updated file permission.
+$ ls -l /home/demo.txt
+-rwxrw-r-- 1 root root 0 Feb  4 16:08 /home/demo.txt
