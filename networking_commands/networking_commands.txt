@@ -1,0 +1,42 @@
+1.Get me the IP address of a particular domain (guvi.in). How do I find my CPU/memory usage of my server?. Test the connectivity between 2 nodes?
+
+$ ping guvi.in
+PING guvi.in (104.26.4.88) 56(84) bytes of data.
+64 bytes from 104.26.4.88 (104.26.4.88): icmp_seq=1 ttl=54 time=0.872 ms
+64 bytes from 104.26.4.88 (104.26.4.88): icmp_seq=2 ttl=54 time=0.889 ms
+64 bytes from 104.26.4.88 (104.26.4.88): icmp_seq=3 ttl=54 time=0.884 ms
+
+
+$ nslookup guvi.in
+Server:         172.31.0.2
+Address:        172.31.0.2#53
+
+Non-authoritative answer:
+Name:   guvi.in
+Address: 172.67.70.207
+Name:   guvi.in
+Address: 104.26.4.88
+Name:   guvi.in
+Address: 104.26.5.88
+Name:   guvi.in
+Address: 2606:4700:20::681a:458
+Name:   guvi.in
+Address: 2606:4700:20::681a:558
+Name:   guvi.in
+Address: 2606:4700:20::ac43:46cf
+
+2.I have deployed an application in guvi.com:9000, and logs show my app is running, but I’m unable to view the page. Check whether my port is open or not ? - 9000 port is not available.
+
+$ netstat -tulnp guvi.com
+(No info could be read for "-p": geteuid()=1000 but you should be root.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.54:53           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           -                   
+udp        0      0 127.0.0.54:53           0.0.0.0:*                           -                   
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -                   
+udp        0      0 172.31.32.103:68        0.0.0.0:*                           -                   
+udp6       0      0 ::1:323                 :::*                                -                   
