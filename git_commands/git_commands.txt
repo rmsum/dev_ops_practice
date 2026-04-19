@@ -1,0 +1,50 @@
+1. Establish a new directory
+$ mkdir my_demo_projects
+$ cd my_demo_projects/
+
+2. populate it with script files
+$ touch script1.sh script2.sh
+$ ls
+$ echo "content for script1 file" > script1.sh
+$ echo "content for script2 file" > script2.sh
+
+3. initiate an empty repository on GitHub , convert the local directory into a Git repository, and link it to GitHub for pushing the code into the repository
+
+Created in github. 
+$ git init
+$ ls
+$ git add .
+$ git commit -m "my first commit"
+$ git remote add origin https://github.com/rmsum/my_demo_projects.git
+$ git branch -M main
+$ git push -u origin main
+
+Perform merge
+
+$ git checkout -b feature-branch
+$ echo "feature branch content" > script1.sh
+$ git status
+$ git add .
+$ git commit -m "feature update"
+$ git push origin feature-branch
+$ git checkout main
+$ git merge feature-branch
+$ git push
+
+rebase
+$ git checkout -b rebase-branch
+$ echo "rebase branch content" > script1.sh
+$ git add .
+$ git commit -m "merge the rebase content"
+$ git rebase main
+$ git push origin rebase-branch
+$ git checkout main
+$ git merge rebase-branch
+$ git push
+
+stash
+$ git checkout -b stash-branch
+$ echo "stash branch content" > script1.sh
+$ git stash
+$ git stash list
+$ git stash pop
